@@ -1,0 +1,15 @@
+<%= render "shared/navbar"%>
+<div class='jumbotron'><%= image_tag 'uchicago.jpg',:style => "width: 100vh"%></div>
+<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+  <div class="card-body">
+    <h4 class="card-title">Find a story here</h4>
+    <p class="card-text">Our blog has <%= Article.public_count %> articles and counting!</p>
+  </div>
+</div>
+<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+  <div class="card-body">
+    <h4 class="card-title">Share your thoughts</h4>
+    <p class="card-text">Leave a comment or write a post</p>
+  </div>
+</div>
+<ul>

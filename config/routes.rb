@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  get 'home/index'
   devise_for :users
   get 'signin/index'
-  root "articles#index"
+  root "home#index"
   resources :account
   resources :articles do 
     resources :comments
