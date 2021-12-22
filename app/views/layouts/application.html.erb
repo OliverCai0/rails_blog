@@ -1,4 +1,19 @@
 <!DOCTYPE html>
+<style type="text/css">
+  #header {
+  height: 20px;
+  background: #222;
+  color: white;
+  }
+  #content {
+    min-height: calc(100vh - 40px);
+  }
+  #footer {
+    height: 20px;
+    background: #222;
+    color: white;
+  }
+</style>
 <html>
   <head>
     <title>Blog</title>
@@ -10,9 +25,19 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+  <body style="background-color: black;">
+    <% unless notice.nil? %>
+       <p class="notice"><%= notice %></p>
+    <% end %>
+    <% unless alert.nil? %>
+       <p class="alert"><%= alert %></p>
+    <% end %>
+    <%= render "shared/navbar"%>
+    <div id='content'>
+      <%= yield %>
+    </div>
+    <div id="footer">
+    <%= render "shared/footer"%>
+    </div>
   </body>
 </html>

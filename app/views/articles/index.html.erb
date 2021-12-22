@@ -1,26 +1,21 @@
-<div class='jumbotron'><%= image_tag 'uchicago.jpg',:style => "width: 100vh"%></div>
-<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-  <div class="card-body">
-    <h4 class="card-title">Find a story here</h4>
-    <p class="card-text">Our blog has <%= Article.public_count %> articles and counting!</p>
-  </div>
+<div class='jumbotron' style='position: relative; z-index: -1;'>
+  <%= image_tag 'polsky.jpg',:style => "width: 100%; z-index: -1;"%>
+    <% unless Article.public_count == 0%>
+    <ul>
+      <% @articles.each do |article| %>
+        <% unless article.archived? %>
+            <li>
+            <a href="<%= article_path(article)%>">
+                <%= article.title %>
+            </a>
+            </li>
+        <%end %>
+      <% end %>
+    </ul>
+  <%else%>
+    <div class='jumbotron' style="position: absolute; right: 0; top: 0; opacity: .5; background-color: #000; width: 50%; height: 100%;">
+      <h1 class="display-4" style="position: relative; top: 50%; opacity: 1;">Nothing Here Yet! LMAO</h1>
+    </div>
+  <%end%>
 </div>
-<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-  <div class="card-body">
-    <h4 class="card-title">Share your thoughts</h4>
-    <p class="card-text">Leave a comment or write a post</p>
-  </div>
-</div>
-<ul>
-  <% @articles.each do |article| %>
-    <% unless article.archived? %>
-        <li>
-        <a href="<%= article_path(article)%>">
-            <%= article.title %>
-        </a>
-        </li>
-    <%end %>
-  <% end %>
-</ul>
-
-<%= link_to "New Article", new_article_path %>
+<%= render 'shared/signin'%>
