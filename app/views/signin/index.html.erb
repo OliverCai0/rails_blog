@@ -1,4 +1,15 @@
-<h1>Signin#index</h1>
-<p>Find me in app/views/signin/index.html.erb</p>
-<%= render "shared/signin"%>
-<%= render "shared/signup"%>
+ <div>
+ <div class="card border-light mb-3" style="max-width: 20rem; position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);">
+    <div class="card-header" style="display: flex;">
+      <button type="button" class="btn btn-secondary" style="flex-grow: 1;">Sign Up</button>
+      <button type="button" class="btn btn-secondary" style="flex-grow: 1;">Log In</button>
+    </div>
+    <div class="card-body">
+      <%= render "shared/signup"%>
+    </div>
+  </div>
+</div>
