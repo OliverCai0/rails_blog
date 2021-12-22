@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'signin/index'
   root "articles#index"
   resources :account
   resources :articles do 
