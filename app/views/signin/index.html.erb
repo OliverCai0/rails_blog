@@ -5,11 +5,15 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);">
     <div class="card-header" style="display: flex;">
-      <button type="button" class="btn btn-secondary" style="flex-grow: 1;">Sign Up</button>
-      <button type="button" class="btn btn-secondary" style="flex-grow: 1;">Log In</button>
+      <%= button_to 'Sign Up', signupform_path, remote: true , :class  => "btn btn-primary"%>
+      <%= button_to 'Log In', loginform_path, remote: true, :class  => "btn btn-primary"%>
+<!--       <button id="signupBttn" type="button" class="btn btn-secondary" style="flex-grow: 1;" onclick="signUp()" disabled>Sign Up</button>
+      <button id="loginBttn" type="button" class="btn btn-secondary" style="flex-grow: 1;" onclick="signIn()">Log In</button> -->
     </div>
     <div class="card-body">
-      <%= render "shared/signup"%>
+      <div id="user_card">
+        <%= render "shared/signup"%>
+      </div>
     </div>
   </div>
 </div>
