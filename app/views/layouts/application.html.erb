@@ -1,18 +1,5 @@
 <!DOCTYPE html>
 <style type="text/css">
-  #header {
-  height: 20px;
-  background: #222;
-  color: white;
-  }
-  #content {
-    min-height: calc(100vh - 40px);
-  }
-  #footer {
-    height: 20px;
-    background: #222;
-    color: white;
-  }
 </style>
 <html>
   <head>
@@ -32,12 +19,9 @@
     <% unless alert.nil? %>
        <p class="alert"><%= alert %></p>
     <% end %>
-    <%= render "shared/navbar"%>
-    <div id='content'>
+    <div id='content' style="height: 95vh; overflow: hidden;">
+      <%= render "shared/navbar"%>
       <%= yield %>
-    </div>
-    <div id="footer">
-    <%= render "shared/footer"%>
     </div>
   </body>
 </html>
