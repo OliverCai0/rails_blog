@@ -1,35 +1,40 @@
-<div class='jumbotron' style='position: relative; z-index: -1;'>
-  <%= image_tag 'polsky.jpg',:style => "width: 100%; z-index: -1;"%>
-    <% unless Article.public_count == 0%>
-    <ul>
+<%= image_tag 'polsky.jpg',:style => "object-fit: cover; height: 100%; width: 100%;"%>
+  <% unless Article.public_count == 0%>
+  <ul>
+    <% @articles.each do |article| %>
+      <% unless article.archived? %>
+          <li>
+          <a href="<%= article_path(article)%>">
+              <%= article.title %>
+          </a>
+          </li>
+      <%end %>
+    <% end %>
+  </ul>
+<%else%>
+  <div class='jumbotron' style="position: absolute; right: 0; top: 10%; opacity: .5; background-color: #000; width: 50%; height: 100%;">
+    <table class="table table-hover">
+      <tr class="table-primary">
+        <th scope="title">Title</th>
+        <th scope="tags">Tags</th>
+        <th scope="date">Date</th>
+      </tr>
       <% @articles.each do |article| %>
-        <% unless article.archived? %>
-            <li>
-            <a href="<%= article_path(article)%>">
-                <%= article.title %>
-            </a>
-            </li>
-        <%end %>
-      <% end %>
-    </ul>
-  <%else%>
-    <div class='jumbotron' style="position: absolute; right: 0; top: 0; opacity: .5; background-color: #000; width: 50%; height: 100%;">
-      <table class="table table-hover">
+        <% unless article.archieved? %>
         <tr class="table-primary">
-          <th scope="title">Title</th>
-          <th scope="tags">Tags</th>
-          <th scope="date">Date</th>
+          <td><a href="<%= article_path(article)%>">
+                <%= article.title %>
+            </a></td>
         </tr>
-        <% @articles.each do |article| %>
-          <% unless article.archieved? %>
-          <tr class="table-primary">
-            <td><a href="<%= article_path(article)%>">
-                  <%= article.title %>
-              </a></td>
-          </tr>
-          <%end%>
         <%end%>
-      </table>
+      <%end%>
+    </table>
+    <div>
+      <div class="card text-white bg-primary mb-3" style="max-width: 100%; opacity: 1;">
+      <div class="card-body">
+          <%= link_to "New Article", new_article_path, :class =>"card-title"%>
+      </div>
+      </div>
     </div>
-  <%end%>
-</div>
+  </div>
+<%end%>

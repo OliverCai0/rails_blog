@@ -1,26 +1,29 @@
 <%= form_with model: article do |form| %>
   <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.label :title , :class=> "form-label mt-4", :style => "font-size: larger;
+    color: whitesmoke;"%><br>
+    <%= form.text_field :title , :class => "form-control" %>
     <% article.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
   <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %><br>
+    <%= form.label :body, :class=> "form-label mt-4", :style => "font-size: larger;
+    color: whitesmoke;" %><br>
+    <%= form.text_area :body , :class => "form-control" , :style => "width: 100%;", :rows => "10"%><br>
     <% article.errors.full_messages_for(:body).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
   <div>
-    <%= form.label :status %><br>
-    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+    <%= form.label :status, :class=> "form-label mt-4", :style => "font-size: larger;
+    color: whitesmoke;" %><br>
+    <%= form.select :status, ['public', 'private', 'archived'],{}, {class: "form-select", style: "width: 25%;"} %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Submit", :class => "btn btn-primary" %>
   </div>
 <% end %>
