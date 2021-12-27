@@ -19,7 +19,7 @@
     <% unless alert.nil? %>
        <p class="alert"><%= alert %></p>
     <% end %>
-    <div id='content' style="height: 95vh; overflow: hidden;">
+    <div id='content' style="height: 100vh; overflow: hidden; position: relative;">
       <%= render "shared/navbar"%>
       <%= yield %>
     </div>
