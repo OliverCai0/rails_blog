@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+
+@media screen and (max-width: 652px) {
+    html { font-size: 0.75rem }
+}

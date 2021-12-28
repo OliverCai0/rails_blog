@@ -1,15 +1,22 @@
-<h1><%= @article.title %></h1>
+<% image_name = ['new_york.jpg','chicago_park.jpg','uchicago_snow.jpg'][rand(3)]%>
+<div style="position: absolute; top: 10%;
+    background-image: url('/assets/new_york.jpg'); background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;">
+  <div style="background: black; margin: 4%;
+    padding: 2.5%; color: whitesmoke; opacity: .75;">
+    <h1 style="color: whitesmoke;"><%= @article.title %></h1>
+    <br>
+    <p><%= @article.body %></p>
+      <%= link_to "Edit", edit_article_path(@article), :class => "btn btn-primary" %>
+      <%= link_to "Delete", article_path(@article),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" }, :class => "btn btn-primary" %>
+    <h2>Comments</h2>
+    <%= render @article.comments%>
 
-<p><%= @article.body %></p>
-
-<ul>
-  <li><%= link_to "Edit", edit_article_path(@article) %></li>
-  <li><%= link_to "Destroy", article_path(@article),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %></li>
-</ul>
-<h2>Comments</h2>
-<%= render @article.comments%>
-
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+    <h2>Add a comment:</h2>
+    <%= render 'comments/form' %>
+  </div>
+</div>

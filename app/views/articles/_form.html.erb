@@ -16,12 +16,18 @@
       <div><%= message %></div>
     <% end %>
   </div>
-  <div>
-    <%= form.label :status, :style => "
-    color: whitesmoke;" %><br>
-    <%= form.select :status, ['public', 'private', 'archived'],{}, {class: "form-select", style: "width: 50%;"} %>
+  <div style="display: flex;     justify-content: space-between;">
+    <div>
+      <%= form.label :status, :style => "
+      color: whitesmoke;" %>
+      <%= form.select :status, ['public', 'private', 'archived'],{}, {class: "form-select", style: ""} %>
+    </div>
+    <div>
+      <%= form.label :tag ,:style => "
+      color: whitesmoke;" %>
+      <%= form.select :tag, ['Life','Diet','School','Work','Hobby'],{},{class: "form-select", style: ""} %>
+    </div>
   </div>
-
   <div>
     <%= form.submit "Submit", :class => "btn btn-primary" %>
   </div>
