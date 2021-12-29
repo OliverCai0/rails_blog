@@ -1,0 +1,7 @@
+@media screen and (max-width: 652px) {
+    html { font-size: 0.75rem }
+
+    #image-background-adjust {
+        background-attachment: initial;
+  }
+}
