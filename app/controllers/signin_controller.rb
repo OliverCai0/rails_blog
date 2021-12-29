@@ -1,5 +1,6 @@
 class SigninController < ApplicationController
   def index
+    render :index
   end
 
   def signupform

@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'home/index'
-  devise_for :users
-  get 'signin/index'
-  root "home#index"
-  resources :account
+  get 'home/index', to: 'home#index'
+  devise_for :users, controllers: { registrations: "registrations" }
+  get 'signin/index', to: 'signin#index'
+  root to: 'home#index'
   resources :articles do 
     resources :comments
   end

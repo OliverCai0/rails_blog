@@ -2,7 +2,7 @@
 //= require jquery
 //= require jquery_ujs
 
-import "@hotwired/turbo-rails"
+// import "@hotwired/turbo-rails"
 import "controllers"
 
 // window.signIn = function(){
