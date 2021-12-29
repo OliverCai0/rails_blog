@@ -24,11 +24,13 @@
         <%end%>
       <%end%>
     </table>
+    <% if user_signed_in? && current_user.admin %>
     <div>
       <div class="card text-white bg-primary mb-3" style="max-width: 100%; opacity: 1;">
-      <div class="card-body">
-          <%= link_to "New Article", new_article_path, :class =>"card-title"%>
-      </div>
+        <div class="card-body">
+            <%= link_to "New Article", new_article_path, :class =>"card-title"%>
+        </div>
       </div>
     </div>
+    <% end%>
   </div>

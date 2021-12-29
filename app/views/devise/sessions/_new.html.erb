@@ -1,0 +1,52 @@
+<h2>Log in</h2>
+<% email = [] %>
+<% password = [] %>
+<% if resource.errors.any? %>
+  <% resource.errors.full_messages.each do |message| %>
+    <% if message.include?("Email") %>
+      <% email.append(message)%>
+    <% else %>
+      <%password.append(message)%>
+    <% end %>
+  <% end %>
+<% end %>
+
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",:class => "form-control" %>
+    <% if email.any?%>
+      <% email.each do |message|%>
+        <p>* <%= message %><p>
+      <% end%>
+    <% end %>
+    <% unless notice.nil? %>
+       <p ><%= notice %></p>
+    <% end %>
+    <% unless alert.nil? %>
+       <p style="color: red; font-size: smaller;"><%= alert %></p>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password",:class => "form-control" %>
+    <% if password.any?%>
+      <% password.each do |message|%>
+        <p>* <%= message %><p>
+      <% end%>
+    <% end %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me%>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+  <br>
+  <div class="actions">
+    <%= f.submit "Log in" ,:class  => "btn btn-primary"%>
+  </div>
+<% end %>

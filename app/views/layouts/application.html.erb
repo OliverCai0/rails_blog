@@ -13,12 +13,6 @@
   </head>
 
   <body style="background-color: black;">
-    <% unless notice.nil? %>
-       <p class="notice"><%= notice %></p>
-    <% end %>
-    <% unless alert.nil? %>
-       <p class="alert"><%= alert %></p>
-    <% end %>
     <div id='content' style="height: 100vh; overflow: auto; position: relative;">
       <%= render "shared/navbar"%>
       <%= yield %>

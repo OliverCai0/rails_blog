@@ -1,1 +1,28 @@
 <%= image_tag 'uchicago.jpg', :style => "object-fit: cover; height: 100%; width: 100%;"%>
+<div style="position: absolute;
+    top: 15%;
+    height: 50%;
+    width: 80%;
+    right: 5%;
+    background-color: black;
+    opacity: .35;">
+</div>
+<div style="position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);">
+<%if user_signed_in?%>
+	<h1 style="color: whitesmoke;">Hello <%=current_user.email.split("@")[0]%></h1>
+<%else%>
+	<h1 style="color: whitesmoke;">Hello Stranger</h1>
+<%end%>
+</div>
+<div style="position: absolute;
+    top: 35%;
+    height: 50%;
+    width: 80%;
+    right: 15%;
+    background-color: black;
+    opacity: .35;">
+</div>
