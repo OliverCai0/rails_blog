@@ -1,5 +1,12 @@
-<%= image_tag 'polsky.jpg',:style => "object-fit: cover; height: 100%; width: 100%;"%>
-  <div class='greyQuadRight jumbotron' style="position: absolute; right: 0; top: 10%; opacity: .75; background-color: #000; width: 75%; height: 90%;">
+<div style="position: absolute; top: 10%;
+    background-image: url(<%=asset_path('polsky.jpg')%>); background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 90%;
+  height: auto;
+  width: 100%;">
+  <div class='greyQuadRight jumbotron' style="position: absolute; right: 0; opacity: .75; background-color: #000; width: 75%; min-height: 100%;">
     <table class="table table-hover">
       <tr class="table-primary">
         <th scope="title">Title</th>
@@ -37,3 +44,4 @@
     </div>
     <% end%>
   </div>
+</div>

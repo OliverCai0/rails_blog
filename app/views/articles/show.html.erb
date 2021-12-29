@@ -1,10 +1,10 @@
 <% image_name = ['new_york.jpg','chicago_park.jpg','uchicago_snow.jpg'][rand(3)]%>
 <div style="position: absolute; top: 10%;
-    background-image: url(<%='/assets/' + image_name%>); background-attachment: fixed;
+    background-image: url(<%=asset_path(image_name)%>); background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;">
+  height: auto;">
   <div style="background: black; margin: 4%;
     padding: 2.5%; color: whitesmoke; opacity: .75;" class="greyQuadRight">
     <h1 style="color: whitesmoke;"><%= @article.title %></h1>
