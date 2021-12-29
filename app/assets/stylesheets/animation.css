@@ -1,3 +1,13 @@
+.backgroundCanvas {
+  position: relative;
+  background: #00222B;
+  filter: blur(4px);
+}
+
+canvas#canvas {
+  display: block;
+}
+
 @keyframes slideInFromRight {
 	0% {
 		transform: translateX(110%);

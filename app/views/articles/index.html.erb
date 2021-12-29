@@ -6,9 +6,11 @@
         <th scope="tags">Tags</th>
         <th scope="date">Date</th>
       </tr>
+      <%baseline_time = 1%>
       <% @articles.each do |article| %>
         <% unless article.archived? %>
-        <tr class="table-secondary">
+        <tr class="greyQuadRight table-secondary" 
+        style= "animation-duration: <%= baseline_time%>s;">
           <th>
             <a href="<%= article_path(article)%>">
                 <%= article.title %>
@@ -22,6 +24,7 @@
           </th>
         </tr>
         <%end%>
+        <%baseline_time += 0.5%>
       <%end%>
     </table>
     <% if user_signed_in? && current_user.admin %>

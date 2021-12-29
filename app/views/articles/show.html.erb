@@ -4,9 +4,9 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: auto;">
+  height: 100%;">
   <div style="background: black; margin: 4%;
-    padding: 2.5%; color: whitesmoke; opacity: .75;">
+    padding: 2.5%; color: whitesmoke; opacity: .75;" class="greyQuadRight">
     <h1 style="color: whitesmoke;"><%= @article.title %></h1>
     <br>
     <p><%= @article.body %></p>
@@ -17,15 +17,15 @@
                       data: { confirm: "Are you sure?" }, :class => "btn btn-primary" %>
     <% end %>
   </div>
+  <% if user_signed_in?%>
   <div style="background: black; margin: 4%;
-    padding: 2.5%; color: whitesmoke; opacity: .75;">
-    <% if user_signed_in?%>
+    padding: 2.5%; color: whitesmoke; opacity: .75; "class="greyQuadLeft">
       <h2 style="color: whitesmoke;">Add a comment:</h2>
       <%= render 'comments/form' %>
-    <% end %>
   </div>
+  <% end %>
   <div style="background: black; margin: 4%;
-    padding: 2.5%; color: whitesmoke; opacity: .5;">
+    padding: 2.5%; color: whitesmoke; opacity: .5;" class="greyQuadRight">
     <h2 style="color: whitesmoke;">Comments</h2>
     <%= render @article.comments%>
   </div>

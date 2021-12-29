@@ -1,10 +1,13 @@
- <div>
- <div class="usercard card border-light mb-3" style="max-width: 20rem; position: absolute;
+ <canvas style = "height: 100%;
+    width: auto; z-index: -1;" id="canvas" class="backgroundCanvas">
+    </canvas>
+ <div class="usercard card border-light mb-3" style="width: 40%; position: absolute;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);">
-    <div class="card-header" style="display: flex;">
+    <div class="card-header" style=
+    "display: flex;">
       <%= link_to 'Sign Up', signupform_path, remote: true , :class  => "btn btn-primary",
         :style => "flex-grow: 1;"%>
       <%= link_to 'Log In', loginform_path, remote: true, :class  => "btn btn-primary",
@@ -16,4 +19,4 @@
       </div>
     </div>
   </div>
-</div>
+
