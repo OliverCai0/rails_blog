@@ -1,5 +1,5 @@
  <div>
- <div class="card border-light mb-3" style="max-width: 20rem; position: absolute;
+ <div class="usercard card border-light mb-3" style="max-width: 20rem; position: absolute;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -12,7 +12,7 @@
     </div>
     <div class="card-body">
       <div id="user_card">
-        <%= render "devise/registrations/new"%>
+        <%= render "devise/registrations/new", :class => "usercard"%>
       </div>
     </div>
   </div>

@@ -1,0 +1,85 @@
+@keyframes slideInFromRight {
+	0% {
+		transform: translateX(110%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideInFromLeft {
+	0% {
+		transform: translateX(-110%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+
+@keyframes fadeIn{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+@keyframes hoverLight{
+	0%{
+		color: white;
+	}
+	100%{
+		color: beige;
+	}
+}
+
+.nav-option:hover{
+	animation-delay: 0s;
+	animation-timing-function: ease;
+	animation-duration: 1s;
+	animation-name: hoverLight;
+	animation-iteration-count: 1;
+}
+
+.greyQuadRight {
+	animation-delay: 0s;
+	animation-timing-function: ease;
+	animation-duration: 2s;
+	animation-name: slideInFromRight;
+	animation-iteration-count: 1;
+}
+
+.greyQuadLeft{
+	animation-delay: 0s;
+	animation-timing-function: ease;
+	animation-duration: 2s;
+	animation-name: slideInFromLeft;
+	animation-iteration-count: 1;
+}
+
+#homeWelcome{
+	animation-delay: 0s;
+	animation-timing-function: ease;
+	animation-duration: 4s;
+	animation-name: fadeIn;
+	animation-iteration-count: 1;
+}
+
+.usercard{
+	animation-delay: 0s;
+	animation-timing-function: ease;
+	animation-duration: 3s;
+	animation-name: fadeIn;
+	animation-iteration-count: 1;
+}
+
+.formcard{
+	height: 100%;
+	animation-delay: 0s;
+	animation-timing-function: ease;
+	animation-duration: 1s;
+	animation-name: fadeIn;
+	animation-iteration-count: 1;
+}

@@ -5,7 +5,8 @@
     width: 80%;
     right: 5%;
     background-color: black;
-    opacity: .35;">
+    opacity: .35;"
+    class="greyQuadRight">
 </div>
 <div style="position: absolute;
     left: 50%;
@@ -13,9 +14,9 @@
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);">
 <%if user_signed_in?%>
-	<h1 style="color: whitesmoke;">Hello <%=current_user.email.split("@")[0]%></h1>
+	<h1 style="color: whitesmoke;" id="homeWelcome">Hello <%=current_user.email.split("@")[0]%></h1>
 <%else%>
-	<h1 style="color: whitesmoke;">Hello Stranger</h1>
+	<h1 style="color: whitesmoke;" id="homeWelcome">Hello Stranger</h1>
 <%end%>
 </div>
 <div style="position: absolute;
@@ -24,5 +25,6 @@
     width: 80%;
     right: 15%;
     background-color: black;
-    opacity: .35;">
+    opacity: .35;"
+    class="greyQuadLeft">
 </div>
