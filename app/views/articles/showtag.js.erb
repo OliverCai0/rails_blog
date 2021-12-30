@@ -1,1 +1,14 @@
-console.log("Hello There")
+console.log("hello there")
+console.log("<%= @selected_tag%>")
+function displayArticles(){
+	$('#display-articles').empty()
+	var table = "<table class='table-hover'><tr class='primary'><th>Name</th></tr>"
+	<%@article.select{|article| article[:tag] == @selected_tag}.each do |article|%>
+		table += "<tr class='table-secondary'><th><a href='<%= article_path(article)%>'><%= article.title %></a></th></tr>"
+		console.log("<%= article.title %>")
+	<%end%>
+	table += "</table>"
+	console.log(table)
+	$('#display-articles').append(table)
+}
+displayArticles()

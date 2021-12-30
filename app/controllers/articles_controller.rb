@@ -49,6 +49,8 @@ class ArticlesController < ApplicationController
   end
 
   def showtag
+    @selected_tag = params[:tag]
+    @article = Article.all
     respond_to do |format|
       format.html {redirect_to articles_archive_path}
       format.js { render layout: false } 
