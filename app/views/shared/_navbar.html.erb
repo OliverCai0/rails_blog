@@ -10,6 +10,9 @@
       <li class="nav-item">
         <%= link_to 'Articles', articles_path, class: 'nav-option nav-link active'%>
         </li>
+        <li class="nav-item">
+        <%= link_to 'Archive', articles_archive_path, class: 'nav-option nav-link active'%>
+        </li>
       <% if user_signed_in? %>
       <li class="nav-item"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-option nav-link active' %></li>
       <% else %>

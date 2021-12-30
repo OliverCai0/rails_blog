@@ -1,7 +1,8 @@
 <% image_name = ['new_york.jpg','chicago_park.jpg','uchicago_snow.jpg'][rand(3)]%>
 <div style="position: absolute; top: 10%;
     background-image: url(<%=asset_path(image_name)%>);
-  height: auto;"
+    min-height: 100%;
+  height: auto; width: 100%;"
   class= " image-background" id="image-background-adjust">
   <div style="background: black; margin: 4%;
     padding: 2.5%; color: whitesmoke; opacity: .75;" class="greyQuadRight">
