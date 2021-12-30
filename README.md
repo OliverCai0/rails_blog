@@ -5,4 +5,4 @@ Deployed site can be accessed [here!](https://oliverrailsblog.herokuapp.com/)
 - Login and register form
 - Article writeup (by admin only)
 - Comment section
-- Archive lookup 
+- Article tag lookup 
