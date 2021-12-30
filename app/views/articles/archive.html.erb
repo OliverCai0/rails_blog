@@ -1,19 +1,19 @@
 <div style="position: absolute; top: 10%;
     background-image: url(<%=asset_path("northwestern.jpg")%>);
-  min-height: 100%; width: 100%; height: auto;"
+  min-height: 90%; width: 100%; height: auto;"
   class= " image-background" id="image-background-adjust">
-</div>
-<div style="position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); background-color: white; width: 50%; height: 50%;">
-  <%= form_with url: articles_showtag_path, local: false do |form| %>
-    <%= form.label "Tag"%>
-    <%= form.select "tag", ['Life','Diet', 'School','Work','Hobby']%>
-    <%= form.submit "Search" %>
+<div style="position: absolute; height: auto; display: flex; background: rgba(60, 60, 60, 0.4); min-height: 100%;
+    min-width: 50%; width: auto; right: 0;
+        flex-direction: column;" class="greyQuadRight">
+  <%= form_with url: articles_showtag_path, local: false, :html => {:style => 'display: flex;     
+    flex-direction: column;'} do |form| %>
+    <%= form.label "Search by Tag", :style => 'text-align: center;
+    color: whitesmoke;
+    font-size: large;'%>
+    <%= form.select "tag", ['Life','Diet', 'School','Work','Hobby'], {}, {:style => '', :class => 'form-select'}%>
+    <%= form.submit "Search", :style => '', :class => 'btn btn-primary' %>
   <% end %>
-  <div id="display-articles">
-      
-  </div>
+    <div id="display-articles" style="">
+    </div>
+</div>
 </div>

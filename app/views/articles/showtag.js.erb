@@ -1,11 +1,10 @@
-console.log("hello there")
-console.log("<%= @selected_tag%>")
 function displayArticles(){
 	$('#display-articles').empty()
-	var table = "<table class='table-hover'><tr class='primary'><th>Name</th></tr>"
+	var table = "<table class='table table-hover'><tr class='greyQuadRight table-dark'><th>Name</th></tr>"
+	var count = 2
 	<%@article.select{|article| article[:tag] == @selected_tag}.each do |article|%>
-		table += "<tr class='table-secondary'><th><a href='<%= article_path(article)%>'><%= article.title %></a></th></tr>"
-		console.log("<%= article.title %>")
+		count += 0.2
+		table += '<tr class="greyQuadRight table-dark" style = "animation-duration:' + count + 's;" ><th><a href="<%= article_path(article)%>" style= "color: inherit;"><%= article.title %></a></th></tr>'
 	<%end%>
 	table += "</table>"
 	console.log(table)
