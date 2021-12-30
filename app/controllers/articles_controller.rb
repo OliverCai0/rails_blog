@@ -48,6 +48,13 @@ class ArticlesController < ApplicationController
     render :archive
   end
 
+  def showtag
+    respond_to do |format|
+      format.html {redirect_to articles_archive_path}
+      format.js { render layout: false } 
+    end
+  end
+
   private
     def article_params
       params.require(:article).permit(:title, :body, :status, :tag)

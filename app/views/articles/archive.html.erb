@@ -3,3 +3,14 @@
   min-height: 100%; width: 100%; height: auto;"
   class= " image-background" id="image-background-adjust">
 </div>
+<div style="position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); background-color: white; width: 50%; height: 50%;">
+  <%= form_with url: articles_showtag_path, local: false do |form| %>
+    <%= form.label "Tag"%>
+    <%= form.select "tag", ['Life','Diet', 'School','Work','Hobby']%>
+    <%= form.submit "Search" %>
+  <% end %>
+</div>
